@@ -86,7 +86,7 @@ u8  Dig_Ch_GetData(u8 Sequence,u32 BaseAdd)
 返回：汉字点阵的字节地址(byte address)。
 如果用户是按 word mode 读取点阵数据，则其地 址(word address)为字节地址除以2，
 即：word address = byte address / 2 . 例如：
-BaseAdd: 说明汉字点阵数据在字库芯片中的起始地址，即BaseAdd＝0x093D0E，
+BaseAdd: 说明汉字点阵数据在字库芯片中的起始地址，即BaseAdd＝0x113D0E，
 “啊”字的内码为0xb0a1,则byte address = GB18030_12_GetData(0xb0,0xa1,0x00,0x00) *24+BaseAdd ,
 word address = byte address / 2	.
 ****************************************************************************************************/
@@ -134,7 +134,7 @@ u32 GB18030_12_GetData(u8 c1, u8 c2, u8 c3, u8 c4)
 返回：汉字点阵的字节地址(byte address)。
 如果用户是按 word mode 读取点阵数据，则其地址(word address)为字节地址除以2，
 即：word address = byte address / 2 . 例如：
-BaseAdd: 说明汉字点阵数据在字库芯片中的起始地址，即BaseAdd＝0x114FDE;
+BaseAdd: 说明汉字点阵数据在字库芯片中的起始地址，即BaseAdd＝0x194FDE;
  “啊”字的内码为0xb0a1,则byte address = GB18030_16_GetData(0xb0,0xa1,0x00,0x00) *32+BaseAdd;
 word address = byte address / 2
 “.”字的内码为0x8139ee39,则byte address = GB18030_16_GetData(0x81,0x39,0xee,0x39) *32+ BaseAdd
@@ -189,7 +189,7 @@ u32 GB18030_16_GetData(u8 c1, u8 c2, u8 c3, u8 c4)
 返回：汉字点阵的字节地址(byte address)。
 如果用户是按 word mode 读取点阵数据，则其地址(word address)为字节地址除以2，
 即：word address = byte address / 2 . 例如：
-BaseAdd: 说明汉字点阵数据在字库芯片中的起始地址，即BaseAdd＝0x1F43DE;
+BaseAdd: 说明汉字点阵数据在字库芯片中的起始地址，即BaseAdd＝0x2743DE;
  “啊”字的内码为0xb0a1,则byte address = GB18030_24_GetData(0xb0,0xa1,0x00,0x00) *72+BaseAdd;
 word address = byte address / 2
 “.”字的内码为0x8139ee39,则byte address = GB18030_24_GetData(0x81,0x39,0xee,0x39) *72+ BaseAdd
@@ -385,7 +385,7 @@ GB/T 18347-2001(CODE128)条形码调用程序
 功能：将数组条形码转为对应条形码图形地址
 参数：u8 *BAR_NUM 条形码数字数组指针,BAR_NUM[4]数组包含4个条形码ASCII符(数组取值为0~94)。
 返回：定义u32 BAR_PIC_ADDR[7] ；用于存放对应地址，返回数组指针。
-设基地址：BaseAddr=0x3F2ED3;
+设基地址：BaseAddr=0x479C7A;
 起始符有3种模式
 当flag=1时为Code-128-A;
 当flag=2时为Code-128-B;
@@ -500,7 +500,7 @@ GB_Address转换之后的GB码的存放地址，
 参数：u16 Unicode,表示输入的UNICODE码。
 返回：对应的GB码在字库中存放的地址。
 （注:读取对应地址2字节数据即为unicode对应的GB码）。
-转码表起始地址： BaseAdd＝0x3EA90E;
+转码表起始地址： BaseAdd＝0x46A90E;
 ***************************************************************************/
 u32 U2G(u16 unicode)
 {
